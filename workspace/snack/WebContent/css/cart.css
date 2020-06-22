@@ -1,0 +1,166 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*购物车界面样式*/
+.cart_con{
+	width:1200px;
+	margin:0 auto;	
+}
+.total_count{
+	width:1200px;
+	height:40px;
+	line-height:40px;
+}
+.total_count em{
+	color:#ff4200;
+	margin:0 5px;
+}
+
+/*购物车每列样式*/
+.cart_list_th{
+	width:1198px;
+	border:1px solid #ddd;
+	background-color:#f7f7f7;	
+}
+.cart_list_th li{
+	float:left;	
+	height:40px;
+	line-height:40px;
+	text-align:center;
+}
+
+/*每列宽度*/
+.cart_list_th .col01{width:26%;}
+.cart_list_th .col02{width:16%;}
+.cart_list_th .col03{width:13%;}
+.cart_list_th .col04{width:12%;}
+.cart_list_th .col05{width:15%;}
+.cart_list_th .col06{width:18%;}
+
+
+/*购物车商品显示*/
+.cart_list_td{
+	width:1198px;
+	border:1px solid #ddd;
+	background-color:#FFF;
+}
+.cart_list_td li{
+	float:left;
+	height:120px;
+	line-height:120px;
+	text-align:center;	
+}
+
+.cart_list_td .col01{width:4%;}
+.cart_list_td .col02{width:12%;}
+.cart_list_td .col03{width:10%;}
+.cart_list_td .col04{width:16%;}
+.cart_list_td .col05{width:13%;}
+.cart_list_td .col06{width:12%;}
+.cart_list_td .col07{width:15%;}
+.cart_list_td .col08{width:18%;}
+
+.cart_list_td .col02 img{
+	width:100px;
+	height:100px;
+	border:1px solid #ddd;
+	display:block;
+	margin:10px auto 0;
+}
+
+.cart_list_td .col03{
+	height:48px;
+	text-align:left;
+	line-height:24px;
+	margin-top:38px;
+}
+.cart_list_td .col03 em{
+	color:#999;	
+}
+
+/*加减按钮*/
+.cart_list_td .col06 .num_add{
+	width:98px;
+	height:28px;
+	line-height:28px;
+	border:1px solid #ddd;
+	margin:45px auto 0;
+}
+.cart_list_td .col06 .num_add a{
+	width:29px;
+	height:28px;
+	line-height:28px;
+	background:#f3f3f3;
+	color:#666;	
+}
+.cart_list_td .col06 .num_show{
+	width:38px;
+	height:28px;
+	text-align:center;
+	border:0;
+	display:block;
+	border-left:1px solid #ddd;
+	border-right:1px solid #ddd;
+}
+
+/*购物车价格统计*/
+.setElements{
+	width:1198px;
+	height:78px;
+	border:1px solid #ddd;
+	background:#fff4e8;
+	margin:0 auto;
+}
+.setElements li{
+	line-height:78px;
+	float:left;
+}
+.setElements .col01{
+	width:4%;
+	text-align:center;
+}
+.setElements .col02{
+	width:12%;
+	text-align:center;
+}
+/*总价和数量*/
+.setElements .col03{
+	width:69%;
+	height:48px;
+	line-height:28px;
+	text-align:right;
+	margin-top:10px;
+}
+.setElements .col03 span{
+	color:#ff0000;
+	padding-right:5px;
+}
+.setElements .col03 em{
+	color:#ff3d3d;
+	font-size:22px;
+	font-weight:bold;
+}
+.setElements .col03 b{
+	color:#ff0000;
+	padding:0 5px;
+}
+/*删除*/
+.setElements .col04{
+	width:14%;
+	text-align:center;
+	float:right;
+}
+.setElements .col04 a{
+	display:block;
+	height:78px;
+	line-height:78px;
+	background:#ff3d3d;
+	text-align:center;
+	color:#fff;
+	font-size:24px;
+}
+
+.setElements .col04 a:hover{
+	color: #FFF !important;
+	background: #EB3939;
+}

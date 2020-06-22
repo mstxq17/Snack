@@ -1,0 +1,12 @@
+package com.yc.snack.dao;
+
+public class AdminInfoDao {
+	public Map(String, String) login(String account, String pwd){
+		DBHelper dbHelper = new DBHelper();
+		String sql = "select aid, aname, tel from admininfo where (name = ? or tel = ?) and passord = ?";
+		
+		
+	}
+	
+
+}

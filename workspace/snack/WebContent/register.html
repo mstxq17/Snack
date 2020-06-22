@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>源辰-零食网注册</title>
+<meta name="keywords" content="小吃,美食,零食,源辰" />
+<meta name="description" content="各种小吃美食，应有尽有" />
+<link href="images/yc.png" rel="shortcut icon" type="image/x-icon"/>
+<link rel="stylesheet" href="css/register.css">
+<link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+<header>
+	<a href="index.html" target="_blank"><img src="images/logo.png" alt="logo" title="点击进入零食网" /></a>
+</header>
+
+<!-- 注册布局 -->
+<div class="register_con">
+    <div class="l_con fl">
+    	<div class="reg_slogan fr">足不出户 · 零食不断</div>
+		<img src="images/bg.jpg" width="480px" height="540px"/>    
+    </div>
+
+    <div class="r_con fr">
+        <div class="reg_title clearfix">
+            <h1 class="fl">用户注册</h1>
+            <a href="login.html" class="fr">登录</a>
+        </div>
+        <div class="reg_form clearfix">
+            <form id="myform">
+                <ul>
+                    <li>
+                        <label for="nickname">用户名:</label>
+                        <input type="text" id="nickname" name="nickName" placeholder="请输入您的用户名" required >
+                        <span class="error_tip">提示信息</span>
+                    </li>
+                    <li>
+                        <label for="pwd">密码:</label>
+                        <input type="password" id="pwd" name="pwd" placeholder="请输入6~15位字母、数字还可包含特殊字符">
+                        <span class="error_tip">提示信息</span>
+                    </li>
+                    <li>
+                        <label for="cpwd">确认密码:</label>
+                        <input type="password" id="cpwd" name="cpwd" placeholder="请输入确认密码">
+                        <span class="error_tip">提示信息</span>
+                    </li>
+                    <li>
+                        <label for="email">邮箱:</label>
+                        <input type="text" id="email" name="email" placeholder="请输入有效的邮箱地址"/>
+                        <input type="button" id="getCode" onclick="sendCode()"  value="获取验证码"/>
+                        <span class="error_tip yzm_tip" >提示信息</span>
+                    </li>
+                    <li>
+                        <label for="yzm">验证码:</label>
+                        <input type="text" id="yzm" name="realName" placeholder="请输入验证码">
+                        <span class="error_tip">提示信息</span>
+                    </li>
+                    <li>
+                        <label for="tel">电话号码:</label>
+                        <input type="text" id="tel" name="tel" placeholder="请输入以1开头的11位有效电话号码">
+                        <span class="error_tip">提示信息</span>
+                    </li>
+                    
+                    <li class="agreement">
+                        <input type="checkbox" id="allow" name="allow" checked>
+                        <label for="allow">同意<a href="#">"天天生鲜用户使用协议"</a></label>
+                        <span class="error_tip2">提示信息2</span>
+                    </li>
+                     <li>
+                        <input type="button" id="reg" name="" onClick="checkRegister()" value="注 册">
+                        <span id="errmsg">提示信息3</span>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
+    
+<!-- 版权所有 -->
+<footer>
+	<div class="foot_link">
+        <a href="#">关于我们</a> <span> | </span>
+        <a href="#">联系我们</a> <span> | </span>
+        <a href="#">招聘广告</a> <span> | </span>
+        <a href="#">友情链接</a>
+    </div>
+    <p>CopyRight &copy; 2019 <a class="copy" href="http://www.hyycinfo.com" target="_blank">衡阳市源辰信息科技有限公司</a> All Rights Reserverd</p>
+    <p>电话：0734-8355998 湘ICP备16015987号-1</p>
+</footer>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>

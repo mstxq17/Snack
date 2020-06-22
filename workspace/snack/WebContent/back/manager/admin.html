@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/main.css">
+<script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<div id="forms" class="mt10">
+	<div class="box">
+		<div class="box_border">
+			<div class="box_center">
+				<form id="myform">
+				姓名：<input type="text" id="tname" class="input-text lh30" size="40"/>&nbsp;&nbsp;
+				密码：<input type="password" id="pwd" class="input-text lh30" size="40"/>&nbsp;&nbsp;
+				手机号码：<input type="tel" id="tel"class="input-text lh30" size="40"/>&nbsp;&nbsp;
+				<input type="button" name="button" class="btn btn82 btn_save2" onclick="addNewsTypeInfo()" value="添加"/>&nbsp;&nbsp;
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="table" class="mt10">
+	<div class="box span10 oh">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="list_table">
+			<thead>
+				<tr>
+					<th width="20%">编号</th>
+                   	<th width="20%">姓名</th>
+                   	<th width="25%">联系方式</th>
+                   	<th width="20%">状态</th>
+                   	<th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="admin_info" align="center">
+				<tr>
+					<td>101</td>
+					<td>navy</td>
+					<td>15096098088</td>
+					<td><font color="green">正常</font></td>
+					<td><a href="javascript:void(0)">[冻结]</a></td>
+				</tr>
+             	<tr>
+             		<td>102</td>
+             		<td>yc</td>
+             		<td>15096098011</td>
+             		<td><font color="red">冻结</font></td>
+             		<td><a href="javascript:void(0)">[解冻]</a></td>
+             	</tr>
+            </tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*版权所有样式*/
+footer{
+	width: 100%;
+	border-top:2px solid #DDDDDD;
+	text-align:center;
+	margin:20px 0;
+	color: #999999;
+}
+
+.foot_link{
+	margin-top:10px;
+}
+
+.foot_link span{
+	padding:0 10px;
+}
+
+footer>p{
+	margin-top:10px;
+}
+
+.copy{
+	background:url(../images/yc.png) no-repeat left center;
+	padding-left: 20px;
+	background-size: 20px 20px;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>源辰-浏览管理员信息</title>
+<link rel="shortcut icon" href="../../images/yc.png" type="image/x-icon" />
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/main.css">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+<div id="forms" class="mt10">
+	<div class="box">
+		<div class="box_border">
+			<div class="box_center">
+				<form id="myform">
+				类型名称：<input type="text" id="tname" class="input-text lh30" size="40"/>&nbsp;&nbsp;
+				<input type="button" name="button" class="btn btn82 btn_save2" onclick="addGoodsType()" value="添加"/>&nbsp;&nbsp;
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="table" class="mt10">
+	<div class="box span10 oh">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="list_table">
+			<thead>
+				<tr>
+                   	<th width="25%">编号</th>
+					<th width="30%">名称</th>
+                   	<th width="15%">状态</th>
+                   	<th>操作</th>
+                </tr>
+             </thead>
+             <tbody id="goodstype_info" align="center">
+				<tr>
+					<td>1001</td>
+					<td>新鲜水果</td>
+					<td class="green">已上架</td>
+					<td><a href="" class="red">[下架]</a></td>
+				</tr>
+				<tr>
+					<td>1001</td>
+					<td>新鲜水果</td>
+					<td class="red">已下架</td>
+					<td><a href="" class="green">[上架]</a></td>
+				</tr>
+             </tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>

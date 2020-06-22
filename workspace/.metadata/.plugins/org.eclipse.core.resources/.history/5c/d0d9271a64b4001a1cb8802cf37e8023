@@ -1,0 +1,15 @@
+package com.yc.snack.util;
+
+public class StringUtil {
+	/**
+	 *  
+	 */
+	public static boolean checkNULL(String ... strs) {
+		if (strs == null || strs.length <= 0 ) {
+			return true;
+		}
+		for (String str : strs) {
+			
+		}
+	}
+}

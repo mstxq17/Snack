@@ -1,0 +1,231 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	width: 100%;
+	background: #F4F4F4;
+	padding: 0px;
+	margin: 0px auto;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	min-width: 1300px;
+}
+
+*{
+	padding: 0px;
+	margin: 0px auto;
+}
+
+a {
+	text-decoration: none;
+	color: #999999;
+}
+
+a:hover{
+	color: #FB654A !important;
+}
+
+/* 顶部样式区 */
+header {
+	width: 100%;
+	height: 200px;
+	border-bottom: 2px solid #DDDDDD;
+}
+
+.header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #FFFFFF;
+	z-index: 999;
+}
+
+.htitle {
+	width: 100%;
+	height: 40px;
+	background-color: #E3E4E5;
+}
+
+.location {
+	display: inline-block;
+	margin-left: 15%;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 32px;
+	background:url(../images/togo.png) no-repeat left center;
+	background-size: 32px 32px;
+}
+
+.header-info {
+	float: right;
+	height: 40px;
+	line-height: 40px;
+	margin-right: 15%;
+}
+
+.header-info>div{
+	float: left;
+}
+
+span {
+	color: #999999;
+}
+
+.header-info a {
+	display: inline-block;
+	line-height: 40px;
+	padding: 0px 10px;
+}
+
+.search {
+	width: 1200px;
+	height: 120px;
+	margin-top: 20px;
+}
+
+.search_left {
+	width: 260px;
+	height: 100%;
+	float: left;
+}
+
+.search_right {
+	width: 900px;
+	height: 100%;
+	float: right;
+}
+
+.search_right > div {
+	margin-top: 25px;
+}
+
+.search_top {
+	width: 800px;
+	height: 44px;
+}
+
+.search_div {
+	width: 620px;
+	height: 40px;
+	background: #E1251B;
+	padding: 2px;
+}
+
+.search_div > *, .search_top > *{
+	float: left;
+}
+
+.search-ipt {
+	width: 540px;
+	height: 40px;
+	padding-left: 2px;
+	border: none;
+	font-size: 14px;
+}
+
+.search-btn {
+	width: 80px;
+	height: 40px;
+	border: none;
+	background:url(../images/search.png) no-repeat center center;
+}
+
+.search-btn:hover{
+	background-color: #D6170D;
+}
+
+.buycart {
+	width: 140px;
+	height: 42px;
+	margin-left: 34px;
+	border: 1px solid #EEEEEE;
+}
+
+.buycart:hover{
+	border-color: #D6170D;
+}
+
+.buycart > a {
+	display:inline-block;
+	line-height: 40px;
+	float:right;
+	color: #E1251B;
+	padding-right: 20px;
+}
+
+.iconfont{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	margin-left: 10px;
+	background: url(../images/cart.png) no-repeat center center;
+	vertical-align: super;
+	text-align: right;
+	color: red;
+	font-weight: bold;
+	font-style: normal;
+}
+
+.search_item {
+	width: 600px;
+	height: 30px;
+	line-height:30px;
+	overflow: hidden;
+	margin-left: 0px;
+}
+
+.search_item > a{
+	padding: 0px 16px;
+	font-size: 15px;
+	font-weight: bold;
+	color: #333;
+	display:inline-block;
+	line-height: 30px;
+	height: 30px;
+	margin-right: 4px;
+}	
+
+.search_item .selected {
+	background-color: #FE5B49;
+	color: #FFFFFF;
+}
+
+.search_item .selected:hover{
+	color: #FFFFFF !important;
+}
+
+/* 清除浮动 */
+.clearfix:before,.clearfix:after{content:"";display:table}
+.clearfix:after{clear:both;}
+.clearfix{zoom:1}
+
+/* 浮动 */
+.fl{float:left}
+.fr{float:right}
+
+/* 去掉列表默认的图标 */
+ul,ol{list-style:none;}
+
+/* 去掉em默认的斜体 */
+em{font-style: normal}
+
+/* 提交提示 */
+.popup_con{display: none;}
+.popup{
+	width:300px;
+	height:150px;
+	border:1px solid #dddddd;
+	border-top:2px solid #00bc6f;
+	background-color:#f7f7f7;
+	position:fixed;
+	left:50%;
+	margin-left:-150px;
+	top:50%;
+	margin-top:-75px;
+	z-index:1000;
+}
+.popup p{
+	height:150px;
+	line-height:150px;
+	text-align:center;
+	font-size:18px;
+}

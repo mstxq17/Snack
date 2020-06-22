@@ -1,0 +1,56 @@
+package com.ya.snack.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.yc.snack.dao.AdminInfoDao;
+
+@WebServlet("/admin") // 说明通过 项目名/admin 来访问
+public class AdminInfoController extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 用户每次请求Servlet时,
+	 */
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		req.setCharacterEncoding("utf-8");
+		resp.setCharacterEncoding("utf-8");
+		super.service(req, resp);
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		super.doPost(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String op = request.getParameter("op");
+		if ("login".equals(op)) {
+			login(request, response);
+		}
+		System.out.println("我进来了");
+	}
+
+	private void login(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		String account = request.getParameter("account");
+		String pwd = request.getParameter("pwd");
+		
+		// 调用DAO层校验用户输入的账号、密码是否正确
+		AdminInfoDao adminInfoDao = new AdminInfoDao();
+		Map<String, String> map = adminInfoDao.login(account, pwd);
+		
+	}
+
+}

@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>源辰-零食网支付</title>
+<meta name="keywords" content="小吃,美食,零食,源辰" />
+<meta name="description" content="各种小吃美食，应有尽有" />
+<link href="images/yc.png" rel="shortcut icon" type="image/x-icon" />
+<link href="css/header.css" rel="stylesheet" type="text/css" />
+<link href="css/pay.css" rel="stylesheet" type="text/css" />
+<link href="css/footer.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<!-- 顶部区域 -->
+<header id="header">
+	<!-- 顶部标题区域 -->
+	<div class="htitle">
+    	<a href="#" target="_blank" class="location">衡阳</a>
+        
+        <div class="header-info">
+            <div class="login-info">
+            	<a href="login.html" title="点击登录">您好，请登录</a>
+                <a href="register.html" title="点击注册"> 免费注册 </a>
+            </div>
+            
+            <div class="person-info">
+            	<span>|</span>
+            	<a href="order.html" target="_blank">我的订单</a>
+                <span>|</span>
+                <a href="#" target="_blank">我的小吃</a>
+                <span>|</span>
+                <a href="#" target="_blank">客户服务</a>
+                <span>|</span>
+           		<a href="#" target="_blank">个人信息</a>
+            </div>
+        
+        </div>
+    </div>
+    
+    <!-- 顶部搜索区域 -->
+    <div class="search">
+    	<div class="search_left">
+    		<a href="index.html" title="首页">
+            	<img src="images/logo.png" width="260px" height="120px"/> 
+            </a>
+        </div>
+        
+        <div class="search_right">
+        	<div class="search_top">
+                <div class="search_div">
+                    <input type="search" class="search-ipt" placeholder="请输入要搜索的内容" />
+                    <input type="button" class="search-btn"/>  
+                </div>
+                <div class="buycart">
+                	<i class="iconfont" id="iconfont">0</i>
+                    <a href="cart.html" target="_blank">我的购物车</a>
+                </div>
+            </div>
+            
+            <div class="search_item" id="search_item">
+            	<a href="#" class="selected">全部</a>
+            	<a href="#">干果</a>
+                <a href="#">麻辣</a>
+                <a href="#">水果</a>
+                <a href="#">饼干</a>
+                <a href="#">奶制品</a>
+                <a href="#">饮料</a>
+                <a href="#">干果</a>
+                <a href="#">麻辣</a>
+                <a href="#">水果</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+     
+<!-- 收货地址 -->
+<h3 class="common_title">确认收货地址</h3>
+
+<div class="common_list_con clearfix">
+    <input type="hidden" id="default_addr"/>
+    <input type="hidden" id="current_addr"/>
+    <dl id="addr_list">
+        <dt>寄送到：</dt>
+        <dd class="default_location">北京市 海淀区 东北旺西路8号中关村软件园 （李思 收） 159****0775 </dd>
+        <dd class="current_location">北京市 海淀区 东北旺西路8号中关村软件园 （李思 收） 159****0775 
+			<a href="javascript:void(0)">设为默认</a></dd>
+		<dd class="default_location">北京市 海淀区 东北旺西路8号中关村软件园 （李思 收） 159****0775 
+			<a href="javascript:void(0)">设为默认</a>
+			<a href="javascript:void(0)">设为当前收货地址</a>
+		</dd>
+	</dl>
+    <a href="javascript:showAddrDiv()" class="edit_site">编辑收货地址</a>
+</div>
+
+<div id="addr_div">
+    <img src="images/close.png" title="关闭" onclick="hiddenDiv()"/>
+    <form id="myform">
+        <ul>
+            <li>
+                <label for="addr_name">收货人：</label>
+                <input id="addr_name" name="name" type="text" placeholder="请输入收货人姓名..." />
+            </li>
+            <li>
+                <label for="addr_tel">联系方式：</label>
+                <input id="addr_tel" name="tel" type="text" placeholder="请输入收货人联系方式..." />
+            </li>
+            <li>
+                <label>收货地址：</label>
+                <select id="province" name="province"></select>
+                <select id="city" name="city">
+                    <option value="0">--请选择城市--</option>
+                </select>
+                <select id="area" name="area">
+                    <option value="0">--请选择地区--</option>
+                </select>
+            </li>
+            <li>
+                <label for="addr_addr">详细地址：</label>
+                <input id="addr_addr" name="addr" style='width: 480px;' type="text" placeholder="请输入详细地址（街道、门牌等）" />
+            </li>
+            <li class="addr_btn">
+                <a href="javascript:addAddr()" >添加收货地址</a>
+            </li>
+        </ul>
+    </form>
+</div>
+
+<!-- 支付方式 -->	
+<h3 class="common_title">支付方式</h3>	
+<div class="common_list_con clearfix">
+    <div class="pay_style_con clearfix">
+        <input type="radio" name="pay_style" checked>
+        <label class="cash">货到付款</label>
+        <input type="radio" name="pay_style">
+        <label class="weixin">微信支付</label>
+        <input type="radio" name="pay_style">
+        <label class="zhifubao"></label>
+        <input type="radio" name="pay_style">
+        <label class="bank">银行卡支付</label>
+    </div>
+</div>
+
+<!-- 商品列表 -->
+<h3 class="common_title">商品列表</h3>
+<div class="common_list_con clearfix" id="order_list">
+    <ul class="goods_list_th clearfix">
+        <li class="col01">商品名称</li>
+        <li class="col02">商品单位</li>
+        <li class="col03">商品价格</li>
+        <li class="col04">数量</li>
+        <li class="col05">小计</li>		
+    </ul>
+    <ul class="goods_list_td clearfix">
+        <li class="col01">1</li>			
+        <li class="col02"><img src="images/goods/good03.jpg"></li>
+        <li class="col03">辣条</li>
+        <li class="col04">500g</li>
+        <li class="col05">16.80元</li>
+        <li class="col06">1</li>
+        <li class="col07">16.80元</li>	
+    </ul>
+    <ul class="goods_list_td clearfix">
+        <li class="col01">2</li>			
+        <li class="col02"><img src="images/goods/good02.jpg"></li>
+        <li class="col03">多味泡泡糖</li>
+        <li class="col04">500g</li>
+        <li class="col05">16.80元</li>
+        <li class="col06">1</li>
+        <li class="col07">16.80元</li>	
+    </ul>
+</div>
+ 
+<!-- 金额结算 -->	
+<h3 class="common_title">总金额结算</h3>
+<div class="common_list_con clearfix">
+    <div class="settle_con">
+        <div class="total_goods_count">共<em id="totalcount"></em>件商品，总金额<b id="total_price"></b></div>
+        <div class="transit">运费：<b>10元</b></div>
+        <div class="total_pay">实付款：<b id="total_pay"></b></div>
+    </div>
+</div>
+<div class="order_submit clearfix">
+    <a href="javascript:void(0);" id="order_btn">提交订单</a>
+</div>	
+
+<div class="popup_con">
+    <div class="popup">
+        <p>订单提交成功，3秒后自动跳转到首页...</p>
+    </div>
+    <div class="mask"></div>
+</div>    
+        
+<footer>
+	<div class="foot_link">
+        <a href="#">关于我们</a> <span> | </span>
+        <a href="#">联系我们</a> <span> | </span>
+        <a href="#">招聘广告</a> <span> | </span>
+        <a href="#">友情链接</a>
+    </div>
+    <p>CopyRight &copy; 2019 <a class="copy" href="http://www.hyycinfo.com" target="_blank">衡阳市源辰信息科技有限公司</a> All Rights Reserverd</p>
+    <p>电话：0734-8355998 湘ICP备16015987号-1</p>
+</footer>
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/addr.js"></script>
+
+<script type="text/javascript">
+
+function showAddrDiv() {
+	$("#addr_div").css("display", "block");
+}
+
+function hiddenDiv() {
+	$("#addr_div").css("display", "none");
+}
+</script>
+</body>
+</html>

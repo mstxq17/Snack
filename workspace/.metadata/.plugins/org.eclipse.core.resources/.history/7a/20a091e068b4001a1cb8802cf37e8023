@@ -1,0 +1,8 @@
+package com.ya.snack.controller;
+
+import javax.servlet.http.HttpServlet;
+
+public class AdminInfoController extends HttpServlet{
+
+	
+}

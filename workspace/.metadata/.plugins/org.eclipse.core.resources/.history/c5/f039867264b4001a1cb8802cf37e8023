@@ -1,0 +1,9 @@
+package com.yc.snack.dao;
+
+public class AdminInfoDao {
+	public Map(String, String) login(String account, String pwsd){
+		
+	}
+	
+
+}

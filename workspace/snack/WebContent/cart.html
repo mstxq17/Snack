@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>源辰-零食网购物车</title>
+<meta name="keywords" content="小吃,美食,零食,源辰" />
+<meta name="description" content="各种小吃美食，应有尽有" />
+<link href="images/yc.png" rel="shortcut icon" type="image/x-icon" />
+<link href="css/header.css" rel="stylesheet" type="text/css" />
+<link href="css/cart.css" rel="stylesheet" type="text/css" />
+<link href="css/footer.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<!-- 顶部区域 -->
+<header id="header">
+	<!-- 顶部标题区域 -->
+	<div class="htitle">
+    	<a href="#" target="_blank" class="location">衡阳</a>
+        
+        <div class="header-info">
+            <div class="login-info">
+            	<a href="login.html" title="点击登录">您好，请登录</a>
+                <a href="register.html" title="点击注册"> 免费注册 </a>
+            </div>
+            
+            <div class="person-info">
+            	<span>|</span>
+            	<a href="order.html" target="_blank">我的订单</a>
+                <span>|</span>
+                <a href="#" target="_blank">我的小吃</a>
+                <span>|</span>
+                <a href="#" target="_blank">客户服务</a>
+                <span>|</span>
+           		<a href="#" target="_blank">个人信息</a>
+            </div>
+        
+        </div>
+    </div>
+    
+    <!-- 顶部搜索区域 -->
+    <div class="search">
+    	<div class="search_left">
+    		<a href="index.html" title="首页">
+            	<img src="images/logo.png" width="260px" height="120px"/> 
+            </a>
+        </div>
+        
+        <div class="search_right">
+        	<div class="search_top">
+                <div class="search_div">
+                    <input type="search" class="search-ipt" placeholder="请输入要搜索的内容" />
+                    <input type="button" class="search-btn"/>  
+                </div>
+                <div class="buycart">
+                	<i class="iconfont" id="iconfont">0</i>
+                    <a href="cart.html" target="_blank">我的购物车</a>
+                </div>
+            </div>
+            
+            <div class="search_item" id="search_item">
+            	<a href="#" class="selected">全部</a>
+            	<a href="#">干果</a>
+                <a href="#">麻辣</a>
+                <a href="#">水果</a>
+                <a href="#">饼干</a>
+                <a href="#">奶制品</a>
+                <a href="#">饮料</a>
+                <a href="#">干果</a>
+                <a href="#">麻辣</a>
+                <a href="#">水果</a>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- 购物车 -->
+<article>
+    <div class="cart_con">
+    	<h2 class="total_count">全部商品<em id="totalcount">1</em>件</h2>
+    	<div class="cart_list_th clearfix">
+        	<ul>
+            	<li class="col01">商品名称</li>
+            	<li class="col02">商品单位</li>
+                <li class="col03">商品价格(元)</li>
+                <li class="col04">数量</li>
+                <li class="col05">小计</li>
+                <li class="col06">操作</li>
+            </ul>
+        </div>
+    	<div class="cart_list_td clearfix" id="cart_list">
+       		<ul>
+        		<li class="col01"><input type="checkbox" checked></li>
+            	<li class="col02"><img src="images/goods/good01.jpg"></li>
+                <li class="col03">零食礼包<br><em>16.80元/500g</em></li>
+                <li class="col04">500g</li>
+                <li class="col05">16.80</li>
+                <li class="col06">
+                	<div class="num_add">
+                    	<a href="javascript:void(0)" onclick="lost(this)" class="minus fl">-</a>
+                        <input type="text" value="1" class="num_show fl">
+                        <a href="javascript:void(0)" onclick="add(this)" class="add fl">+</a>
+                    </div>
+                </li>
+                <li class="col07">16.80</li>
+                <li class="col08"><a href="javascript:;" onclick="delGoods(this)">删除</a></li>
+            </ul>
+            <ul>
+        		<li class="col01"><input type="checkbox" checked></li>
+            	<li class="col02"><img src="images/goods/good02.jpg"></li>
+                <li class="col03">多味泡泡糖莓<br><em>16.80元/500g</em></li>
+                <li class="col04">500g</li>
+                <li class="col05">16.80</li>
+                <li class="col06">
+                	<div class="num_add">
+                    	<a href="javascript:void(0)" onclick="lost(this)" class="minus fl">-</a>
+                        <input type="text" value="1" class="num_show fl">
+                        <a href="javascript:void(0)" onclick="add(this)" class="add fl">+</a>
+                    </div>
+                </li>
+                <li class="col07">16.80</li>
+                <li class="col08"><a href="javascript:;" onclick="delGoods(this)">删除</a></li>
+            </ul>
+            <ul>
+        		<li class="col01"><input type="checkbox" checked ></li>
+            	<li class="col02"><img src="images/goods/good03.jpg"></li>
+                <li class="col03">辣条<br><em>16.80元/500g</em></li>
+                <li class="col04">500g</li>
+                <li class="col05">16.80</li>
+                <li class="col06">
+                	<div class="num_add">
+                    	<a href="javascript:void(0)" onclick="lost(this)" class="minus fl">-</a>
+                        <input type="text" value="1" class="num_show fl">
+                        <a href="javascript:void(0)" onclick="add(this)" class="add fl">+</a>
+                    </div>
+                </li>
+                <li class="col07">16.80</li>
+                <li class="col08"><a href="javascript:;" onclick="delGoods(this)">删除</a></li>
+            </ul>
+        </div>
+    	<div class="setElements">
+        	<ul>
+            	<li class="col01"><input type="checkbox" checked id="all"></li>
+            	<li class="col02"><label for="all">全选</label></li>
+                <li class="col03">合计(不含运费)：<span>&yen;</span><em id="totalPrices"></em><br>共计<b id="totalNumbers"></b>件商品</li>
+                <li class="col04"><a href="pay.html" target="_blank">去结算</a></li>
+            </ul>
+        </div>
+    </div>
+</article>
+
+<footer>
+	<div class="foot_link">
+        <a href="#">关于我们</a> <span> | </span>
+        <a href="#">联系我们</a> <span> | </span>
+        <a href="#">招聘广告</a> <span> | </span>
+        <a href="#">友情链接</a>
+    </div>
+    <p>CopyRight &copy; 2019 <a class="copy" href="http://www.hyycinfo.com" target="_blank">衡阳市源辰信息科技有限公司</a> All Rights Reserverd</p>
+    <p>电话：0734-8355998 湘ICP备16015987号-1</p>
+</footer>
+<script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<script src="js/cart.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>源辰-零食网</title>
+<meta name="keywords" content="小吃,美食,零食,源辰" />
+<meta name="description" content="各种小吃美食，应有尽有" />
+<link href="images/yc.png" rel="shortcut icon" type="image/x-icon" />
+<link href="css/header.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<link href="css/footer.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<!-- 顶部区域 -->
+<header id="header">
+	<!-- 顶部标题区域 -->
+	<div class="htitle">
+    	<a href="#" target="_blank" class="location">衡阳</a>
+        
+        <div class="header-info">
+            <div class="login-info">
+            	<a href="login.html" title="点击登录">您好，请登录</a>
+                <a href="register.html" title="点击注册"> 免费注册 </a>
+            </div>
+            
+            <div class="person-info">
+            	<span>|</span>
+            	<a href="order.html" target="_blank">我的订单</a>
+                <span>|</span>
+                <a href="#" target="_blank">我的小吃</a>
+                <span>|</span>
+                <a href="#" target="_blank">客户服务</a>
+                <span>|</span>
+           		<a href="#" target="_blank">个人信息</a>
+            </div>
+        
+        </div>
+    </div>
+    
+    <!-- 顶部搜索区域 -->
+    <div class="search">
+    	<div class="search_left">
+    		<a href="index.html" title="首页">
+            	<img src="images/logo.png" width="260px" height="120px"/> 
+            </a>
+        </div>
+        
+        <div class="search_right">
+        	<div class="search_top">
+                <div class="search_div">
+                    <input type="search" class="search-ipt" placeholder="请输入要搜索的内容" />
+                    <input type="button" class="search-btn"/>  
+                </div>
+                <div class="buycart">
+                	<i class="iconfont">0</i>
+                    <a href="cart.html" target="_blank">我的购物车</a>
+                </div>
+            </div>
+            
+            <div class="search_item" id="search_item">
+            	<a href="#" class="selected">全部</a>
+            	<a href="#">干果</a>
+                <a href="#">麻辣</a>
+                <a href="#">水果</a>
+                <a href="#">饼干</a>
+                <a href="#">奶制品</a>
+                <a href="#">饮料</a>
+                <a href="#">干果</a>
+                <a href="#">麻辣</a>
+                <a href="#">水果</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="slide">
+	<ul class="slide_pics">
+        <li><a href="" class=""><img src="images/slide01.jpg" alt="幻灯片"></a></li>
+        <li><a href="" class=""><img src="images/slide02.jpg" alt="幻灯片"></a></li>
+        <li><a href="" class=""><img src="images/slide03.jpg" alt="幻灯片"></a></li>
+        <li><a href="" class=""><img src="images/slide04.jpg" alt="幻灯片"></a></li>
+        <li><a href="" class=""><img src="images/slide05.jpg" alt="幻灯片"></a></li>
+    </ul>
+    <div class="prev"></div>
+    <div class="next"></div>
+    <ul class="points"></ul>
+</div>
+
+
+<article>
+    <div class="view_title">
+    	<a href="" class="view_price price_down">价格</a>
+        <input type="number" id="start_price" class="price_ipt" min="1"/>
+        <span>-</span>
+        <input type="number" id="end_price" class="price_ipt" min="1"/>
+    </div>
+    
+    <div class="view_goods">
+    	<ul id="view_goods">
+        	<li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good01.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy" onclick="addCart()">&nbsp;</span>
+                </div>
+            </li>
+        	<li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good02.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good03.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good04.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good05.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good06.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good07.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good08.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good09.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good10.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good11.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good12.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good13.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good14.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good15.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good11.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good12.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good13.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good14.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+            <li class="hot_box">
+            	<i class="all_i i_t"></i>
+				<i class="all_i i_r"></i>
+				<i class="all_i i_b"></i>
+				<i class="all_i i_l"></i>
+                <a href="detail.html" target="_blank" class="hot_warp">
+                	<img src="images/goods/good15.jpg" title="好吃"/>
+                    <span>房间里的咖啡店</span>
+                </a>
+                <div class="view_info">
+                	<span class="price">255</span>
+                    <span>/ 500G</span>
+                    <span class="buy">&nbsp;</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="page_info">
+    	<a href="" class="active">首页</a>
+        <a href="" class="active">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">末页</a>
+    </div>
+</article>
+<div class="popup_con">
+	<div class="popup">
+		<p id="popup_info"></p>
+	</div>
+</div>  
+<footer>
+	<div class="foot_link">
+        <a href="#">关于我们</a> <span> | </span>
+        <a href="#">联系我们</a> <span> | </span>
+        <a href="#">招聘广告</a> <span> | </span>
+        <a href="#">友情链接</a>
+    </div>
+    <p>CopyRight &copy; 2019 <a class="copy" href="http://www.hyycinfo.com" target="_blank">衡阳市源辰信息科技有限公司</a> All Rights Reserverd</p>
+    <p>电话：0734-8355998 湘ICP备16015987号-1</p>
+</footer>
+<script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="js/slide.js" type="text/javascript"></script>
+<script src="js/index.js" type="text/javascript"></script>
+<script>
+function addCart() {
+	$("#popup_info").text("加入购物车成功...");
+	$('.popup_con').fadeIn('fast', function() {
+		setTimeout(function(){
+			$('.popup_con').fadeOut('fast',function(){
+			});	
+		}, 2000)
+	});
+}
+</script>
+</body>
+</html>

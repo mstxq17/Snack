@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>源辰-零食网后台登陆</title>
+<link rel="stylesheet" href="css/login.css">
+<link rel="short icon" href="../images/yc.png" type="image/x-icon">
+</head>
+<body>
+<div id="login_top">
+	<div id="welcome">
+		欢迎使用源辰零食网后台管理系统
+	</div>
+	<div id="back">
+		<a href="../index.html">返回首页</a>&nbsp;&nbsp; | &nbsp;&nbsp;
+		<a href="#">帮助</a>
+	</div>
+</div>
+<div id="login_center">
+	<div id="login_area">
+		<div id="login_form">
+			<form action="" method="post" id="myform">
+				<div id="login_tip">
+					用户登录&nbsp;&nbsp;UserLogin
+				</div>
+				<div><input type="text" class="username" id="account" placeholder="请输入账号..."></div>
+				<div><input type="password" class="pwd" id="pwd" placeholder="请输入密码..."></div>
+				<div id="btn_area">
+					<input type="button"  onclick="checkLogin()" id="sub_btn" value="登&nbsp;&nbsp;录">&nbsp;&nbsp;
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div id="login_bottom">
+	<label style="color:#FFF"><a class="copy" href="http://www.hyycinfo.com">衡阳市源辰信息科技有限公司 </a>&copy; 版权所有</label>
+</div>
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+function checkLogin() {
+	location.href="manager/index.html";	
+}
+</script>
+</body>
+</html>

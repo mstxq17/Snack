@@ -1,0 +1,15 @@
+package com.ya.snack.controller;
+
+import javax.servlet.http.HttpServlet;
+
+public class AdminInfoController extends HttpServlet{
+
+	/**
+	 *  用户每次请求Servlet时,
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
+
+	
+}

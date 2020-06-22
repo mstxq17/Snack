@@ -1,0 +1,223 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	padding:0px;
+	margin: 0px auto;
+	font-family:"微软雅黑";
+	font-size: 14px;
+	min-width: 1100px;
+}
+
+*{
+	padding:0px;
+	margin: 0px auto;
+}
+
+a{
+	text-decoration: none;
+	color: #999999;
+}
+
+a:hover{
+	text-decoration: underline;
+	color:#F30;
+}
+
+header {
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+}
+
+header>a{
+	display: inline-block;
+	height: 100px;
+	width: 300px;
+	line-height: 100px;
+}
+
+header>a>img{
+	vertical-align: middle;
+	height: 100px;
+	width: 300px;
+}
+
+/*注册界面样式*/
+/* 让h标签文字大小继承body的文字设置 */
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+
+/* 去掉列表默认的图标 */
+ul,ol{list-style:none;}
+
+/* 去掉em默认的斜体 */
+em{font-style: normal;}
+
+/* 去掉a标签默认的下划线 */
+a{text-decoration:none;}
+
+/* 去掉加链接时产生的框线 */
+img{border:0;}
+
+/* 清除浮动 */
+.clearfix:before,.clearfix:after{content:"";display:table}
+.clearfix:after{clear:both;}
+.clearfix{zoom:1}
+
+/* 浮动 */
+.fl{float:left}
+.fr{float:right}
+
+.register_con{
+	width:1200px;
+	height:620px;
+	margin:50px auto 0;
+	background:url(../images/interval_line.png) no-repeat 300px top;
+}
+
+/*左侧样式*/
+.l_con{
+	width:500px;
+}
+
+.reg_logo{
+	width:500px;
+	height:76px;
+	margin-right:30px;
+}
+
+.l_con .reg_slogan{
+	width:500px;
+	height:30px;
+	text-align:center;
+	font-size:25px;
+	color:#69a81e;
+	margin-bottom:20px;
+}
+.reg_banner{
+	width:251px;
+	height:329px;
+	background:url(../images/register_banner.png) no-repeat;
+	margin:20px 30px 0 0;
+	opacity:0.8;/*透明度0-1  0 完全透明  1完全不透明*/
+}
+
+/*右侧样式*/
+.r_con{
+	width:550px;
+	margin-left:50px;
+}
+/*上部分*/
+.reg_title{
+	width:480px;
+	height:50px;
+	margin-left:30px;
+	border-bottom:1px solid #e0e0e0;	
+}
+.reg_title h1{
+	height:50px;
+	line-height:50px;
+	color:#a8a8a8;
+	margin-left: 10px;
+}
+.reg_title a{
+	height:20px;
+	line-height:20px;
+	color:#5fb42a;
+	background:url(../images/icons02.png) no-repeat 35px 3px;
+	margin-top:15px;
+	padding-right:20px;
+}
+
+/*下部分 表单*/
+.reg_form{
+	width:500px;
+	margin:30px 0 0 30px;
+}
+.reg_form li{
+	height:70px;	
+}
+.reg_form li label{
+	width:70px;	
+	height:35px;
+	line-height:35px;
+	color:#a8a8a8;
+	float:left;
+}
+
+/*输入框样式*/
+.reg_form li input{
+	width:410px;
+	height:33px;
+	border:1px solid #e0e0e0;
+	outline:none;
+	text-indent:10px;
+	background-color:#f8f8f8;
+	float:left;
+	font-size: 14px;
+	margin-left:10px;
+}
+#email{
+	width:300px;
+}
+#getCode{
+	width:100px;
+	outline:dashed;
+	cursor:pointer;
+	background-color:white;	
+}
+
+/*滑动解锁部分*/
+.reg_form .row{
+	height:40px;
+}
+
+/*协议部分*/
+.reg_form .agreement{
+	height:50px;
+}
+.reg_form .agreement input{
+	width:18px;
+	height:18px;
+	margin-top:15px;
+}
+.reg_form .agreement label{
+	width:250px;
+	margin-left:20px;	
+	margin-top:5px;
+}
+
+#reg{
+	width:500px;
+	height:35px;
+	background:#47aa34;
+	font-size:18px;
+	cursor:pointer;
+	color:#fff;	
+	margin-left:-3px;
+}
+
+/*错误信息提示*/
+.reg_form li .error_tip,#errmsg{
+	height:30px;
+	line-height:30px;
+	margin-left:10px;
+	color:#E62E2E;	
+	display:none;/*超出部分隐藏*/
+}
+
+.reg_form li .yzm_tip{
+	float:left;
+}
+.reg_form li .error_tip2{
+	height:35px;
+	line-height:35px;
+	color:#E62E2E;
+	position:relative;
+	left:10px;
+	top:5px;
+	display:none;
+}
+#errmsg{
+	margin-left:85px;
+}

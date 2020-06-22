@@ -1,0 +1,118 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*支付订单界面样式*/
+
+.common_title{
+	width:1200px;
+	margin:20px auto 0;
+}
+
+.common_list_con{
+	width:1200px;
+	border:1px solid #dddddd;
+	border-top:2px solid #00bc6f;
+	margin:10px auto 0;
+	background-color:#f7f7f7;
+	position:relative;
+}
+
+.common_list_con dl{
+	margin:20px;
+}
+.common_list_con dt{
+	font-weight:bold;
+	margin-bottom:10px;
+}
+.common_list_con dd input{
+	vertical-align:bottom;
+	margin-right:10px;
+}
+
+.edit_site{
+	position:absolute; 
+	right:20px;
+	top:30px;
+	width:100px;
+	height:30px;
+	text-align:center;
+	line-height:30px;
+	background-color:#37ab40;
+	color:#fff;
+}
+
+/*商品列表样式*/
+.goods_list_th{
+	height:40px;
+	border-bottom:1px solid #ccc;
+}
+.goods_list_th li{
+	float:left;
+	line-height:40px;
+	text-align:center;
+}
+.goods_list_th .col01{width:25%}
+.goods_list_th .col02{width:15%}
+.goods_list_th .col03{width:20%}
+
+.goods_list_td{
+	height:80px;
+	border-bottom:1px solid #eeeded;
+}
+.goods_list_td li{
+	float:left;
+	line-height:80px;
+	text-align:center;
+}
+
+.goods_list_td .col01{width:4%}
+.goods_list_td .col02{width:6%}
+.goods_list_td .col03{width:15%}
+.goods_list_td .col04{width:20%}
+
+
+.goods_list_td .col02{
+	text-align:right;
+}
+.goods_list_td .col02 img{
+	width:63px;
+	height:63px;
+	border:1px solid #ddd;
+	display:block;
+	margin:7px 0;
+	float:right;
+}
+
+.order_list_con{
+	width:1200px;
+	border:1px solid #dddddd;
+	margin:10px auto 0;
+	position:relative;
+}
+
+.order_title{
+	background: #f7f7f7;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #CCC;
+	border-top:2px solid #00bc6f;
+	color: #727272;
+	padding-left: 2px;
+}
+
+.order_title>span,.order_title>a{
+	float: right;
+	vertical-align: middle;
+	padding-right: 10px;
+}
+
+.order_title>a:hover{
+	color: #E86829;
+}
+
+#order_list .order_title>span{
+	float: left;
+	margin-right: 20px;
+	padding-left: 4px;
+}

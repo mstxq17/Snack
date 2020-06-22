@@ -1,0 +1,16 @@
+-- 创建数据库
+create database snack default character set utf8 collate utf8_bin;
+
+-- 切换到snack库
+use snack;
+
+-- 创建后台管理员信息表
+crete table if not existe adminInfo(
+	aid int primary key auto_increment, -- 管理员编号、主键，自增
+	aname varchar(100) not null unique, -- 管理员昵称,唯一且空
+	pwd varchar(100) not null, -- 密码不能为空
+	tel varchar(15) unique, -- 联系方式，要么没有 要么唯一
+	status int
+) ENGINE = InnoDB AUTO_INCREMENT = 101 default charset=utf8 collate=utf8_bin;
+
+-- 创建商品类型表

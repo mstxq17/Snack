@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>源辰-浏览商品信息</title>
+<link rel="shortcut icon" href="../../images/yc.png" type="image/x-icon" />
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<div class="mt10">
+	<div class="box">
+		<div class="box_border">
+			<div class="box_center">
+				<form id="myform">
+					商品类型：<select class="select" name="tno" id="goodsType">
+								
+						</select>&nbsp;&nbsp;
+					商品名称：<input type="tel" id="gname" class="input-text lh30" size="40" />&nbsp;&nbsp;
+					<input type="button" name="button" class="btn btn82 btn_search"
+						onclick="searchGoods()" value="查询" />&nbsp;&nbsp;
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="table" class="mt10">
+	<div class="box span10 oh">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0"
+			class="list_table">
+			<thead>
+				<tr>
+					<th width="8%">编号</th>
+					<th width="20%">名称</th>
+					<th width="10%">类型</th>
+					<th width="10%">商品价格</th>
+					<th width="10%">库存</th>
+					<th width="8%">单位</th>
+					<th width="8%">净重</th>
+					<th width="8%">保质期</th>
+					<th width="8%">状态</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody id="goods_info" align="center">
+				<tr>
+					<td>1001</td>
+					<td>安慕希风味酸牛奶</td>
+					<td>奶制品</td>
+					<td>68.8</td>
+					<td>120</td>
+					<td>箱</td>
+					<td>500G</td>
+					<td>6个月</td>
+					<td class="green">已上架</td>
+					<td><a href='' class='red'>[下架]</a>&nbsp;&nbsp;<a href=''>[详细]</a></td>
+				</tr>
+				<tr>
+					<td>1002</td>
+					<td>喜之郎果肉果冻</td>
+					<td>果冻</td>
+					<td>68.8</td>
+					<td>120</td>
+					<td>包</td>
+					<td>500G</td>
+					<td>6个月</td>
+					<td class="red">已下架</td>
+					<td><a href='' class='green'>[上架]</a>&nbsp;&nbsp;<a href=''>[详细]</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="page mt10">
+			<div class="pagination">
+				<ul id ="pagination_info">
+					<li class="first-child active"><a href="javascript:void()" onclick=" ">首页</a></li>
+					<li class="active"><a href="javascript:void()" onclick=" ">1</a></li>
+					<li><a href="javascript:void()" onclick=" ">2</a></li>
+					<li class="last-child"><a href="javascript:void()" onclick="">末页</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
