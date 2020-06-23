@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<title>源辰-后台首页</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="shortcut icon" href="../../images/yc.png" type="image/x-icon" />
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.SuperSlide.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $(".sideMenu").slide({
+            titCell:"h3",
+            targetCell:"ul",
+            defaultIndex:0,
+            effect:'slideDown',
+            delayTime:'500' ,
+            trigger:'click',
+            triggerTime:'150',
+            defaultPlay:true,
+            returnDefault:false,
+            easing:'easeInQuint',
+            endFun:function(){
+                scrollWW();
+            }
+        });
+        $(window).resize(function() {
+            scrollWW();
+        });
+    });
+    function scrollWW(){
+        if($(".side").height()<$(".sideMenu").height()){
+            $(".scroll").show();
+            var pos = $(".sideMenu ul:visible").position().top-38;
+            $('.sideMenu').animate({top:-pos});
+        }else{
+            $(".scroll").hide();
+            $('.sideMenu').animate({top:0});
+            n=1;
+        }
+    }
+
+    var n=1;
+    function menuScroll(num){
+        var Scroll = $('.sideMenu');
+        var ScrollP = $('.sideMenu').position();
+        if(num==1){
+            Scroll.animate({top:ScrollP.top-38});
+            n = n+1;
+        }else{
+            if (ScrollP.top > -38 && ScrollP.top != 0) { ScrollP.top = -38; }
+            if (ScrollP.top<0) {
+                Scroll.animate({top:38+ScrollP.top});
+            }else{
+                n=1;
+            }
+            if(n>1){
+                n = n-1;
+            }
+        }
+    }
+
+    function showpage(obj,page){
+        $("#rightMain").attr("src",page);
+        $("#sideMenu li").removeClass("on");
+        $(obj).parent().addClass("on");
+        $("#here_area").text("当前位置："+$(obj).text());
+    }
+</script>
+</head>
+<body>
+<div class="top">
+    <div id="top_t">
+        <div id="logo" class="fl"></div>
+        <div id="photo_info" class="fr">
+            <div id="photo" class="fl">
+                <a href="#"><img src="../../images/yc.png" alt="源辰信息" width="60" height="60"></a>
+            </div>
+            <div id="base_info" class="fr">
+                <div class="help_info">
+                    <a href="1" id="hp">&nbsp;</a>
+                    <a href="2" id="gy">&nbsp;</a>
+                    <a href="../index.html" id="out">&nbsp;</a>
+                </div>
+                <div class="info_center">
+                   	源辰
+                    <span id="nt">通知</span><span><a href="#" id="notice">3</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="side_here">
+        <div id="side_here_l" class="fl"></div>
+        <div id="here_area" class="fl">当前位置：欢迎界面</div>
+    </div>
+</div>
+<div class="side">
+    <div class="sideMenu" id="sideMenu" style="margin:0 auto">
+        <h3>用户信息</h3>
+        <ul>
+            <li><a href="javascript:void(0)" onclick="showpage(this,'admin.html')">管理员信息</a></li>
+            <li><a href="javascript:void(0)" onclick="showpage(this,'member.html')">会员信息</a></li>
+        </ul>
+        <h3>商品信息</h3>
+        <ul>
+            <li><a href="javascript:void(0)" onclick="showpage(this,'type.html')">商品类型</a></li>
+            <li><a href="javascript:void(0)" onclick="showpage(this,'goods.html')">添加商品</a></li>
+            <li><a href="javascript:void(0)" onclick="showpage(this,'view.html')">浏览商品</a></li>
+        </ul>
+        <h3>统计中心</h3>
+        <ul>
+			<li><a href="javascript:void(0)" onclick="showpage(this,'report.html')">统计报表</a></li>
+        </ul>
+        <h3>个人中心</h3>
+        <ul>
+			<li><a href="javascript:void(0)" onclick="showpage(this,'personal.html')">个人信息</a></li>
+			<li><a href="javascript:void(0)" onclick="showpage(this,'cpwd.html')">修改密码</a></li>
+        </ul>
+    </div>
+</div>
+<div class="main">
+    <iframe name="right" id="rightMain" src="welcome.html" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+</div>
+<div class="bottom">
+    <div id="bottom_bg"><a class="copy" href="http://www.hyycinfo.com">源辰信息科技有限公司</a>&copy;版权所有 0734-8355998</div>
+</div>
+<div class="scroll">
+    <a href="javascript:;" class="per" title="使用鼠标滚轴滚动侧栏" onclick="menuScroll(1);"></a>
+    <a href="javascript:;" class="next" title="使用鼠标滚轴滚动侧栏" onclick="menuScroll(2);"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+package com.yc.snack.dao;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * 商品类型
+ * 
+ * @author xq17
+ *
+ */
+public class GoodsTypeDao {
+
+	/**
+	 * 添加商品类型信息
+	 * 
+	 * @param tname
+	 * @return
+	 */
+	public int add(String tname) {
+		DBHelper db = new DBHelper();
+		String sql = "insert into goodstype values(0, ?, 1)";
+		return db.update(sql, tname);
+	}
+
+	/**
+	 * 查询所有类型信息
+	 * 
+	 * @return
+	 */
+	public List<Map<String, String>> finds() {
+		DBHelper db = new DBHelper();
+		String sql = "select tid, tname, status from goodstype";
+		return db.finds(sql);
+	}
+
+	/**
+	 * 查询所有可用类型信息
+	 * @return
+	 */
+	public List<Map<String, String >> find(){
+		DBHelper db = new DBHelper();
+		String sql = "select tid, tname from goodstype where status != 0";
+		return db.finds(sql);
+	}
+
+}

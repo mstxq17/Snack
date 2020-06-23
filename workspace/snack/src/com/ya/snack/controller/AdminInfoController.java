@@ -9,13 +9,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.mysql.cj.Session;
 import com.yc.snack.dao.AdminInfoDao;
 
 @WebServlet("/admin") // 说明通过 项目名/admin 来访问
 public class AdminInfoController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+	boolean debug = true;
 
 	/**
 	 * 用户每次请求Servlet时,
@@ -41,7 +46,24 @@ public class AdminInfoController extends HttpServlet {
 		
 		if ("login".equals(op)) { //说明用户是要进行后台
 			login(request, response);
+		} else if("checkLogin".equals(op)) {
+			checkLogin(request, response);
 		}
+	}
+
+	private void checkLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		// TODO Auto-generated method stub
+		HttpSession httpSession = request.getSession();
+		
+		Object obj = httpSession.getAttribute("currentLoginAdmin");
+		PrintWriter out = response.getWriter();
+		
+		if(debug) {
+			System.out.println("ok");
+		}
+		Gson gson = new GsonBuilder().serializeNulls().create();
+		out.print(gson.toJson(obj));
+		out.flush();	
 	}
 
 	/**

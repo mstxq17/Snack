@@ -1,0 +1,25 @@
+package com.yc.snack.dao;
+
+/**
+ * 商品类型
+ * @author xq17
+ *
+ */
+public class GoodsTypeDao {
+	
+	/**
+	 * 添加商品类型信息
+	 * @param tname
+	 * @return
+	 */
+	public int add(String tname) {
+		DBHelper db = new DBHelper();
+		String sql = "insert into goodstype values(0, ?, 1)";
+		return db.update(sql, tname);
+	}
+	
+	public List< finds(){
+		
+	}
+
+}
