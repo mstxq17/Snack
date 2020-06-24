@@ -17,7 +17,7 @@
 			var str = "";
 			$.each(result, function(index, item){
 				if(parseInt(item.status) == 1){
-					str += "<option value=''" + item.tid + "'>" + item.tname +"</option>";
+					str += "<option value='" + item.tid + "'>" + item.tname +"</option>";
 					console.log(str);
 				}
 			});
@@ -129,14 +129,14 @@ function addGoodsInfo() {
 	var descr = CKEDITOR.instances.editor1.getData();
 	
 	$.ajaxFileUpload({
-		url:'../../goods/addGood',
+		url:'../../goods?op=addGood',
 		secureuri: false,
 		fileElementId:"pic",
 		dataType:"json",
-		data:{tno:tno, gname:gname,price:price,balance:balance,unit:unit,qperied:qperied,weight:weight,intro:intro,descr:descr},
+		data:{tid:tno, gname:gname,price:price,balance:balance,unit:unit,qperied:qperied,weight:weight,intro:intro,descr:descr},
 		success:function(data, stuts) {
 			data = parseInt($.trim(data));
-			if (data == 1) {
+			if (data >= 1) {
 				$("#addGoodsForm")[0].reset();
 				$("#showPics").html("");
 				CKEDITOR.instances.editor1.setData("");
