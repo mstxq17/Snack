@@ -2,16 +2,20 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
 <fullyQualifiedTypeName name="com.yc.snack.dao.DBHelper"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
-<fullyQualifiedTypeName name="com.google.gson.Gson"/>
 <fullyQualifiedTypeName name="com.google.gson.GsonBuilder"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.sun.jndi.toolkit.ctx.StringHeadTail"/>
-<fullyQualifiedTypeName name="com.yc.snack.util.StringUtil"/>
 <fullyQualifiedTypeName name="com.yc.snack.dao.GoodsTypeDao"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="com.yc.snack.util.FileUploadUtil"/>
 <fullyQualifiedTypeName name="javax.servlet.jsp.JspFactory"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="com.yc.snack.util.StringUtil"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections"/>
+<fullyQualifiedTypeName name="com.yc.snack.controller.GoodsInfoController"/>
+<fullyQualifiedTypeName name="com.google.gson.Gson"/>
+<fullyQualifiedTypeName name="com.alipay.api.internal.util.StringUtils"/>
+<fullyQualifiedTypeName name="com.yc.snack.dao.GoodsInfoDao"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 </qualifiedTypeNameHistroy>

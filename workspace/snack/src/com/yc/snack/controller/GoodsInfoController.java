@@ -132,7 +132,7 @@ public class GoodsInfoController extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		Gson gson = new Gson();
-		out.print(gson.toJson(out));
+		out.print(gson.toJson(map));
 		out.flush();
 	}
 	

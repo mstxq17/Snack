@@ -61,7 +61,7 @@ public class GoodsInfoDao {
 	 */
 	public Map<String, String> findByGid(String gid){
 		DBHelper db  = new DBHelper();
-		String sql = "select gid, g.tid, tname, gname, price, weight, intro, pics, balance, unit, qperied"
+		String sql = "select gid, g.tid, tname, gname, price, weight, intro, pics, balance, unit, qperied,"
 				+ "descr from goodsinfo g, goodstype t where g.tid = t.tid and gid = ?";
 		if(debug) {
 			System.out.println(sql);

@@ -54,7 +54,7 @@
 				</div>
 
 				<div class="search_item" id="search_item">
-					<a href="#" class="selected">全部</a>
+					<a href="#" href="javascript:void(0)" onclick="findByTid(this, 0)" class="selected">全部</a>
 				</div>
 			</div>
 		</div>
@@ -128,11 +128,12 @@ function addCart() {
 var page = 1;
 var rows = 3;
 var totalPage = 1;
+var goods_tid = 0;
 $(function(){
 	$.post("type", {op:"find"}, result => {
 			var str = "";
 			$.each(result, function(index, item){
-				str += '<a href="javascript:void(0)" onclick="findByTid(' + item.tid + ')">' + item.tname + '</a>';
+				str += '<a href="javascript:void(0)" onclick="findByTid(this,' + item.tid + ')">' + item.tname + '</a>';
 			});
 			$("#search_item").append($(str));
 	}, "json");
@@ -145,15 +146,32 @@ $(function(){
 	}, "json");
 });
 
+
+function findByTid(obj, tid){
+	if (tid == 0){
+		tid = "";
+	}
+	goods_tid = tid;
+	
+	$.post("goods", {op:"finds", tid:tid, page:page, rows:rows}, result=>{
+		totalPage = Math.ceil(result.total / rows);
+		showData(result.rows);
+		showPage();
+		$("#search_item > a").removeClass("selected");
+		$(obj).addClass("selected");
+	}, "json");
+}
+
+
 function showData(data){
 	var str = "";
 	var pics = [];
 	$.each(data, function(index, item) {
 		str += '<li class="hot_box"><i class="all_i i_t"></i><i class="all_i i_r"></i><i class="all_i i_b"></i><i class="all_i i_l"></i>';
-		str += '<a href="detail.html#' + item.gno + '" target="_blank" class="hot_warp">';
+		str += '<a href="detail.html#' + item.gid + '" target="_blank" class="hot_warp">';
 		pics = item.pics.split(";");
 		str += '<img src="' + pics[0] + '" title="' + item.gname + '"/><span>' + item.gname + '</span></a><div class="view_info">'
-     	str += '<span class="price">' + item.price + '</span><span>/ ' + item.weight + '</span><span class="buy" onclick="addCart(' + item.gno + ')">&nbsp;</span></div></li>';
+     	str += '<span class="price">' + item.price + '</span><span>/ ' + item.weight + '</span><span class="buy" onclick="addCart(' + item.gid + ')">&nbsp;</span></div></li>';
 	})
 	$("#view_goods").html("").append($(str));
 }
@@ -180,7 +198,7 @@ function findByPage(obj, page){
 		return;
 	}
 	flag = page;
-	$.post("goods", {op:"findByPage", page:page, rows:rows}, result => {
+	$.post("goods", {op:"findByPage", tid: goods_tid, page:page, rows:rows}, result => {
 		showData(result);
 	}, "json");
 	$("#page_info>a").removeClass("active");

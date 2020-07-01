@@ -86,15 +86,14 @@
      
 <!-- 商品展示 -->
 <div class="goods_details_con clearfix">
-    <div class="goods_details_pic fl">
-        <img src="images/goods/good03.jpg">
+    <div class="goods_details_pic fl" id="goods_pics">
     </div>
     <div class="goods_details_list fr">
-        <h3>草莓果冻</h3>
-        <p>草莓浆果柔软多汁，味美爽口，适合速冻保鲜贮藏。草莓速冻后，可以保持原有的色、香、味，既便于贮藏，又便于外销。</p>
+        <h3 id="goods_gname"></h3>
+        <p id="goods_intro"></p>
         <div class="price_bar">
-            <span class="show_price">&yen;<em>16.80</em>元</span>
-            <span class="show_unit">单位：<em>500g</em></span>
+            <span class="show_price">&yen;<em id="goods_price"></em>元</span>
+            <span class="show_unit">单位：<em id="goods_unit"></em></span>
         </div>
         <div class="goods_num clearfix">
             <div class="num_name fl">数量：</div>
@@ -103,9 +102,9 @@
                 <a href="javascript:addCount(1)" class="add fr">+</a>
                 <a href="javascript:addCount(-1)" class="minus fr">-</a>	
             </div>
-            <div class="balance_cls">仓库量<span id="store_num">100</span> KG</div>
+            <div class="balance_cls">仓库量<span id="store_num"></span></div>
         </div>
-        <div class="total">总价：<em>16.80</em>元</div>
+        <div class="total">总价：<em id="total_price"></em>元</div>
         <div class="operate_btn">
             <a href="javascript:;" class="buy_btn" id="buy_btn">立即购买</a>
             <a href="javascript:void(0);" class="add_cart" id="add_cart" onclick="addCart()">加入购物车</a>				
@@ -143,7 +142,7 @@
         <div class="tab_content">
             <dl>
                 <dt>商品详情：</dt>
-                <dd>草莓采摘园位于北京大兴区 庞各庄镇四各庄村 ，每年1月-6月面向北京以及周围城市提供新鲜草莓采摘和精品礼盒装草莓，草莓品种多样丰富，个大香甜。所有草莓均严格按照有机标准培育，不使用任何化肥和农药。草莓在采摘期间免洗可以直接食用。欢迎喜欢草莓的市民前来采摘，也欢迎各大单位选购精品有机草莓礼盒，有机草莓礼盒是亲朋馈赠、福利送礼的最佳选择。 </dd>
+                <dd id="goods_detail"></dd>
             </dl>
         </div>
 
@@ -167,6 +166,53 @@
 </footer>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script>
+$(function(){
+	var gid = location.hash.replace("#", "");
+	if(!gid){
+		location.href = "index.html";
+		return;
+	}
+	
+	// 拿到商品编号后，发送请求到后端获取商品详细信息
+	$.post("goods", {op:"findByGid", gid:gid}, result => {
+		$("#godds_type").text(result.tname + ">" + result.gname);
+		$("#goods_gname").text(result.gname);
+		$("#goods_intro").text(result.intro);
+		if(result.pics) {
+			var str = "";
+			var pics = result.pics.split(";");
+			for(var i = 0, len = pics.length; i < len; i++){
+				str += "<img src='" + pics[i]+ "  '/>";
+			}
+			$("#goods_pics").append($(str));
+		}
+		
+		$("#store_num").text(result.balance);
+		var num = $("#goods_count").val();
+		$("#total_price").text(  (parseInt(num) * result.price).toFixed(2) );
+		$("#goods_price").text(result.price);
+		$("#goods_unit").text(result.unit);
+		$("#goods_detail").append($(result.descr));
+		
+		loopPic();
+	}, "json");
+})
+
+function loopPic(){
+	var pics = $("#goods_pics > img");
+	var len = pics.length;
+	var index = 0 ;
+	if(len>1){
+		setInterval(()=>{
+			index ++;
+			index = index%len;
+			$("#goods_pics > img").css("display","none");
+			$("#goods_pics > img").eq(index).css("display","block");
+		}, 2000);
+	}
+}
+
+
 function addCount(num) {
 	var nums = parseInt($("#goods_count").val());
 	var store_num = parseInt($("#store_num").val());
@@ -181,6 +227,9 @@ function addCount(num) {
 		return;
 	}
 	$("#goods_count").val(nums);
+	
+	var price = parseFloat($("#goods_price").text());
+	$("#total_price").text(  (parseInt(nums) * price).toFixed(2) );
 }
 
 function addCart() {

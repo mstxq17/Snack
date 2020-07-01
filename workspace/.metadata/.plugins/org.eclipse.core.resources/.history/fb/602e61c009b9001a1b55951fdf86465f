@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>源辰-零食网商品详细</title>
+<meta name="keywords" content="小吃,美食,零食,源辰" />
+<meta name="description" content="各种小吃美食，应有尽有" />
+<link href="images/yc.png" rel="shortcut icon" type="image/x-icon" />
+<link href="css/header.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<link href="css/footer.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/detail.css" type="text/css" >
+</head>
+
+<body>
+<!-- 顶部区域 -->
+<header id="header">
+	<!-- 顶部标题区域 -->
+	<div class="htitle">
+    	<a href="#" target="_blank" class="location">衡阳</a>
+        
+        <div class="header-info">
+            <div class="login-info">
+            	<a href="login.html" title="点击登录">您好，请登录</a>
+                <a href="register.html" title="点击注册"> 免费注册 </a>
+            </div>
+            
+            <div class="person-info">
+            	<span>|</span>
+            	<a href="order.html" target="_blank">我的订单</a>
+                <span>|</span>
+                <a href="#" target="_blank">我的小吃</a>
+                <span>|</span>
+                <a href="#" target="_blank">客户服务</a>
+                <span>|</span>
+           		<a href="#" target="_blank">个人信息</a>
+            </div>
+        
+        </div>
+    </div>
+    
+    <!-- 顶部搜索区域 -->
+    <div class="search">
+    	<div class="search_left">
+    		<a href="index.html" title="首页">
+            	<img src="images/logo.png" width="260px" height="120px"/> 
+            </a>
+        </div>
+        
+        <div class="search_right">
+        	<div class="search_top">
+                <div class="search_div">
+                    <input type="search" class="search-ipt" placeholder="请输入要搜索的内容" />
+                    <input type="button" class="search-btn"/>  
+                </div>
+                <div class="buycart">
+                	<i class="iconfont">0</i>
+                    <a href="cart.html" target="_blank">我的购物车</a>
+                </div>
+            </div>
+            
+            <div class="search_item" id="search_item">
+            	<a href="#" class="selected">全部</a>
+            	<a href="#">干果</a>
+                <a href="#">麻辣</a>
+                <a href="#">水果</a>
+                <a href="#">饼干</a>
+                <a href="#">奶制品</a>
+                <a href="#">饮料</a>
+                <a href="#">干果</a>
+                <a href="#">麻辣</a>
+                <a href="#">水果</a>
+            </div>
+        </div>
+    </div>
+</header>
+     
+<!-- 面包屑导航 --> 
+<div class="breadcrumb" id="breadcrumb">
+    <a href="javascript:void(0)">全部分类</a>
+    <span>&gt;</span>
+    <a href="javascript:void(0)" id="goods_type">干果</a>
+    <span>&gt;</span>
+    <a href="javascript:void(0)">商品详情</a>
+ </div>
+     
+<!-- 商品展示 -->
+<div class="goods_details_con clearfix">
+    <div class="goods_details_pic fl">
+        <img src="images/goods/good03.jpg">
+    </div>
+    <div class="goods_details_list fr">
+        <h3 id="goods_gname"></h3>
+        <p id="goods_intro"></p>
+        <div class="price_bar">
+            <span class="show_price">&yen;<em id="goods_price"></em>元</span>
+            <span class="show_unit">单位：<em id="goods_unit"></em></span>
+        </div>
+        <div class="goods_num clearfix">
+            <div class="num_name fl">数量：</div>
+            <div class="num_add fl">
+                <input type="text" class="num_show fl" value="1" id="goods_count">
+                <a href="javascript:addCount(1)" class="add fr">+</a>
+                <a href="javascript:addCount(-1)" class="minus fr">-</a>	
+            </div>
+            <div class="balance_cls">仓库量<span id="store_num"></span> KG</div>
+        </div>
+        <div class="total">总价：<em id="total_price"></em>元</div>
+        <div class="operate_btn">
+            <a href="javascript:;" class="buy_btn" id="buy_btn">立即购买</a>
+            <a href="javascript:void(0);" class="add_cart" id="add_cart" onclick="addCart()">加入购物车</a>				
+        </div>
+    </div>
+</div>
+
+<!-- 商品详情 -->
+<div class="main_wrap clearfix">
+    <div class="l_wrap fl clearfix">
+        <div class="new_goods">
+            <h3>新品推荐</h3>
+            <ul>
+                <li>
+                    <a href="#"><img src="images/goods/good01.jpg"></a>
+                    <h4><a href="#">零食大礼包</a></h4>
+                    <div class="prize">&yen;3.90</div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods/good02.jpg"></a>
+                    <h4><a href="#">多味泡泡糖</a></h4>
+                    <div class="prize">&yen;16.80</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="r_wrap fr clearfix">
+        <ul class="detail_tab clearfix">
+            <li class="active">商品介绍</li>
+            <li>评论</li>
+            <li>推荐</li>
+        </ul>
+
+        <div class="tab_content">
+            <dl>
+                <dt>商品详情：</dt>
+                <dd id="goods_detail"></dd>
+            </dl>
+        </div>
+
+    </div>
+</div>
+<div class="popup_con">
+	<div class="popup">
+		<p id="popup_info"></p>
+	</div>
+</div>    
+<!-- 版权所有 -->
+<footer>
+	<div class="foot_link">
+        <a href="#">关于我们</a> <span> | </span>
+        <a href="#">联系我们</a> <span> | </span>
+        <a href="#">招聘广告</a> <span> | </span>
+        <a href="#">友情链接</a>
+    </div>
+    <p>CopyRight &copy; 2019 <a class="copy" href="http://www.hyycinfo.com" target="_blank">衡阳市源辰信息科技有限公司</a> All Rights Reserverd</p>
+    <p>电话：0734-8355998 湘ICP备16015987号-1</p>
+</footer>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script>
+$(function(){
+	var gid = location.hash.replace("#", "");
+	console.log(gid);
+	if(!gid){
+		location.href = "index.html";
+		return;
+	}
+	
+	// 拿到商品编号后，发送请求到后端获取商品详细信息
+	$.post("goods", {op:"findByGid", gid:gid}, result => {
+		$("#godds_type").text(result.tname + ">" + result.gname);
+		$("#goods_gname").text(result.gname);
+		$("#goods_intro").text(result.intro);
+		if(result.pics) {
+			var str = "";
+			var pics = result.pics.split(";");
+			for(var i = 0, len = pics.length; i < len; i++){
+				str += "<img src='" + pics[i]+ "  '/>";
+			}
+			$("#goods_pics").append($(str));
+		}
+		
+		$("#store_num").text(result.balance);
+		var num = $("#goods_count").val();
+		$("total_price").text(  (parseInt(num) * result.price).toFixed(2) );
+		
+		
+	})
+})
+
+
+
+function addCount(num) {
+	var nums = parseInt($("#goods_count").val());
+	var store_num = parseInt($("#store_num").val());
+	nums += parseInt(num);
+	if (nums <= 0) {
+		$("#goods_count").val(1);
+		return;
+	}
+	
+	if (nums > store_num){
+		$("#goods_count").val(store_num);
+		return;
+	}
+	$("#goods_count").val(nums);
+}
+
+function addCart() {
+	$("#popup_info").text("加入购物车成功...");
+	$('.popup_con').fadeIn('fast', function() {
+		setTimeout(function(){
+			$('.popup_con').fadeOut('fast',function(){
+				// location.href = 'alipay/pay/' + data.msg +"/" + price;
+			});	
+		}, 2000)
+	});
+}
+</script>
+</body>
+</html>
